@@ -11,7 +11,7 @@ public class Hero {
 	}
 	
 	public void attack() {
-		System.out.println("ÁÖ¸Ô Áö¸£±â");
+		System.out.println("ÁÖ¸Ô Áö¸£±â ¾å!");
 	}
 	
 }
