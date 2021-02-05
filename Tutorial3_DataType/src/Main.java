@@ -1,5 +1,5 @@
 // 원시 자료형 : Boolean/Numeric
-// (boolean)/(char)/(byte/short/int/long)/(float/double)
+// (boolean-Not applicable)/(char - 2바이트)/(byte - 1바이트,/short - 2바이트/int -4바이트/long - 8바이트)/(float - 4바이트/double - 8바이트)
 // 비원시 자료형 : String/Array/etc..
 
 // 정수를 나타내는 자료형이 많은 이유는 각 자료형이 차지하는 메모리 공간의 크기가 다르기 때문입니다.
