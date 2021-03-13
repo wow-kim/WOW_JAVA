@@ -22,7 +22,7 @@ public class EX2_5 {
 		while (y > 0) {
 			remainder = y % 16;
 			
-			if(remainder==10) { 	//문자열 처리
+			if(remainder==10) { 	
 	          	y_hex = "A"+y_hex;	 //10-> A
 	          }else if(remainder==11) {
 	        	y_hex = "B"+y_hex;	 //11-> B
@@ -45,7 +45,7 @@ public class EX2_5 {
 		while (z > 0) {			
 			remainder = z % 16;
 			
-			if(remainder==10) { 	//문자열 처리
+			if(remainder==10) { 	
 	          	z_hex = "A"+z_hex;	 //10-> A
 	          }else if(remainder==11) {
 	        	z_hex = "B"+z_hex;	 //11-> B
@@ -68,7 +68,7 @@ public class EX2_5 {
 		while (a > 0) {			
 			remainder = a % 16;
 			
-			if(remainder==10) { 	//문자열 처리
+			if(remainder==10) { 	
 	          	a_hex = "A"+a_hex;	 //10-> A
 	          }else if(remainder==11) {
 	        	a_hex = "B"+a_hex;	 //11-> B
@@ -91,7 +91,7 @@ public class EX2_5 {
 		while (b > 0) {			
 			remainder = b % 16;
 			
-			if(remainder==10) { 	//문자열 처리
+			if(remainder==10) { 	
 	          	b_hex = "A"+b_hex;	 //10-> A
 	          }else if(remainder==11) {
 	        	b_hex = "B"+b_hex;	 //11-> B
@@ -111,7 +111,7 @@ public class EX2_5 {
 		}
 			
 		b_hex = "0x" + b_hex;
-
+		
 		System.out.println("y="+y_hex);
 		System.out.println("z="+z_hex);
 		System.out.println("a="+a_hex);
