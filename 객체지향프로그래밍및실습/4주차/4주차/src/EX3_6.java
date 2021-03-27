@@ -1,13 +1,79 @@
 import java.util.Scanner;
 
 public class EX3_6 {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+	static void showBoard(char[][] board) {
+		for (int i=0; i<3; i++) {
+			System.out.println("  "+board[i][0] + "|  " + board[i][1] + "|  " + board[i][2]);
+			
+			if (i != 2)
+				System.out.println("---|---|---");	
+		}
+	}
+	
+	static boolean checkWin(char[][] table) {		
+		// 행 검사
+		for (int i = 0; i < 3; i++) {
+			char t = table[i][0];
+			if (t == 'o'){
+					if (t == table[i][1] && t == table[i][2]) {
+						System.out.println("Computer Win");
+						return true;
+					}
+			}
+			else if(t == 'x') {
+					if (t == table[i][1] && t == table[i][2]) {
+						System.out.println("You Win");
+						return true;
+					}	
+			}
+		}
 		
+		// 열 검사
+		for (int j = 0; j < 3; j++) {
+			char t = table[0][j];
+			if (t == 'o'){
+				if (t == table[1][j] && t == table[2][j]) {
+					System.out.println("Computer Win");
+					return true;
+					}
+			} else if(t == 'x') {
+				if (t == table[1][j] && t == table[2][j]) {
+					System.out.println("You Win");
+					return true;
+					}	
+			}
+		}
+		
+		// 대각선 검사
+		char t = table[1][1];
+		if (t == 'o') {
+			if ((t==table[0][0] && t == table[2][2])||(t==table[0][2] && t==table[2][0])){
+				System.out.println("Computer Win");
+				return true;
+			}
+		} else if (t == 'x') {
+			if ((t==table[0][0] && t == table[2][2])||(t==table[0][2] && t==table[2][0])){
+				System.out.println("You Win");
+				return true;
+			}
+		}
+		
+		// 무승부 검사
+		for (int a=0; a< 3; a++) {
+			for (int b=0; b < 3; b++) {
+				if (table[a][b] == ' ')
+					return false;
+			}
+		}	
+		System.out.println("무승부");
+		return true;
+	}
+
+	
+	public static void main(String[] args) {		
 		char[][] board = new char[3][3];
 		int x, y;
-		int win=0;
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -16,12 +82,7 @@ public class EX3_6 {
 				board[i][j] = ' ';
 		
 		do {
-			for (int i=0; i<3; i++) {
-				System.out.println("  "+board[i][0] + "|  " + board[i][1] + "|  " + board[i][2]);
-				
-				if (i != 2)
-					System.out.println("---|---|---");	
-			}
+			showBoard(board);
 			
 			do {
 			System.out.print("다음 수의 좌표를 입력하세요: ");
@@ -31,6 +92,7 @@ public class EX3_6 {
 				break;
 			} while (true);
 				
+			
 			if (board[x][y] != ' ') {
 				System.out.println("잘못된 위치입니다. ");
 				continue;
@@ -38,39 +100,31 @@ public class EX3_6 {
 				board[x][y] = 'x';
 			}
 			
-			int a=0, b=0;
-			for (a=0; a< 2; ++a) {
-				for (b=0; b < 2; ++b) {
-					if (board[a][b] != ' ')
-						win++;
-				}
-			}
-			System.out.println(win);
-			if (win == 9) {
-				System.out.println("게임 끝!");
+			if (checkWin(board) == true) {
+				showBoard(board);
 				break;
-			} else {
-				win = 0;
 			}
 			
-			
-			int i=0, j=0;
-			for (i=0; i< 2; ++i) {
-				for (j=0; j < 2; ++j) {
-					if (board[i][j] == ' ')
+			boolean flag = false;
+			for (int i=0; i< 3; i++) {
+				for (int j=0; j < 3; j++) {
+					if (board[i][j] == ' ') {
+						board[i][j] = 'o';
+						flag = true;
 						break;
+					}
 				}
-				if (board[i][j] == ' ')
+				if (flag == true)
 					break;
 			}
 			
-			if (i<3 && j < 3)
-				board[i][j] = 'o';
+			if (checkWin(board) == true){
+				showBoard(board);
+				break;
+			}
+			
 		} while (true);
 		
 		scan.close();
 	}
-	
-	
-
 }

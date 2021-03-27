@@ -3,7 +3,6 @@ import java.util.*;
 public class EX3_4 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String operator;
 		double num1;
 		double num2;

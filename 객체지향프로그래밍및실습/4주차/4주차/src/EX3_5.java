@@ -3,7 +3,6 @@ import java.util.*;
 public class EX3_5 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int i;
 		
 		Scanner sc = new Scanner(System.in);
