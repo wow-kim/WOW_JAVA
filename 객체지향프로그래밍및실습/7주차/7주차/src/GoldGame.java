@@ -29,8 +29,6 @@ public class GoldGame {
 		Monster monster = new Monster();
 		boolean flag = false;
 		
-		char[] table = 
-		
 		
 	}
 
