@@ -16,7 +16,10 @@ public class ExceptionTest {
 		} finally {
 			System.out.println("최종 처리");
 		}
-				
+		
+		String s1 = "AA";
+		String s2 = new String("AA");
+		System.out.println(s1.equals(s2));
 		
 	}
 
