@@ -9,6 +9,8 @@ public class ArrayListTest {
 		list.add("Áö¿µ");
 		for(String obj : list)
 			System.out.print(obj + " ");
+		list.remove(0);	
+		System.out.println(list.get(0));
 	}
 
 }

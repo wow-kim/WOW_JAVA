@@ -9,7 +9,7 @@ class Base{
 
 class Derived extends Base{
 	public Derived() {
-		// super("hi");	
+		super("hi");	
 		System.out.println("Derived() »ı¼ºÀÚ");
 	}
 }

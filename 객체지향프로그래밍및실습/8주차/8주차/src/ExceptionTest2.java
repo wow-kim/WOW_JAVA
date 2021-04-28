@@ -15,6 +15,7 @@ public class ExceptionTest2 {
 		if (i >=0) {
 			System.out.println("숫자의 위치 : " + i);
 		} else {
+			
 			throw new NotFoundException();
 		}
 	}
